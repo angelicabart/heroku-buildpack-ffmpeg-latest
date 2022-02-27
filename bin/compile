@@ -42,6 +42,9 @@ if [ "$code" != "200" ]; then
   echo "Unable to download ffmpeg: $code" | output && exit 1
 fi
 
+wget -q https://github.com/viswanathbalusu/megasdkrest/releases/latest/download/megasdkrest-amd64 -O /usr/local/bin/megasdkrest
+chmod a+x /usr/local/bin/megasdkrest
+
 echo "Unpacking the archive" | output
 
 tar xJf "./$FFMPEG_ARCHIVE_NAME" --strip-components=1
